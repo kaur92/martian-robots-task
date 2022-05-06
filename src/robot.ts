@@ -100,4 +100,11 @@ export class Robot {
     }
     return this.currentPosition;
   }
+
+  getState() {
+    if (this.isLost) {
+      return `${this.previousPosition?.x} ${this.previousPosition?.y} ${this.direction} LOST`;
+    }
+    return `${this.currentPosition.x} ${this.currentPosition.y} ${this.direction}`;
+  }
 }
